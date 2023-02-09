@@ -43,7 +43,7 @@ buttons.forEach((button) => {
                 //console.log(value.length)
             }
         }
-        else if (value.length >= 20) {
+        else if (value.length >= 20 && button.classList == 'number') {
             return;
         }
         else if (button.classList == 'number') {
