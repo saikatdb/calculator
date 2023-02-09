@@ -59,21 +59,25 @@ buttons.forEach((button) => {
             a = value;
             sign = button.id;
             displayValue.textContent = value + ' ' + sign;
-            value = '';
+            display.textContent = value = '';
             //console.log(value);
             //console.log(sign);
         }
-        else if (button.id == '=' && sign == '/' && value == 0 ||
-        button.classList == 'operator' && sign == '/' && value == 0) {
-            display.textContent = 'Math Error';
+        else if (button.id == '=' && sign == '÷' && value == 0 ||
+        button.classList == 'operator' && sign == '÷' && value == 0) {
+            display.textContent = "can't divide by zero";
             displayValue.textContent = value = '';
         }
         else if (button.classList == 'operator' && sign != ''){
+            if (value == '' && sign != '') {
+                return;
+            }
             a = operate(sign, +a, +value);//here result is a cause a will be needed in next iteration
             //previous operator will act as sign
             sign = button.id;//then new operator will replace it 
             display.textContent = a ;
             displayValue.textContent = a + ' ' + sign;
+            console.log(value)
             value = '';
         }
         else if (button.id == '=' && value == '') {
