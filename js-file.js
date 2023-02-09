@@ -52,7 +52,7 @@ buttons.forEach((button) => {
             display.textContent = value += button.id;
             //console.log(value);
         }
-        else if (button.classList == 'period' && !value.includes('.')) {
+        else if (button.classList == 'period' && !value.toString().includes('.')) {
             display.textContent = value += button.id;
         }
         else if (button.classList == 'operator' && sign == '') {
