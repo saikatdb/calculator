@@ -43,12 +43,20 @@ buttons.forEach((button) => {
                 //console.log(value.length)
             }
         }
-        else if (value.length >= 20 && button.classList == 'number') {
-            return;
+        // else if (value.length >= 17 ) {
+            //     value = value.toExponential();
+            // }
+        else if (value.length >= 17 ) {
+            num = parseFloat(value)
+            value = num.toExponential();
         }
         else if (button.classList == 'number') {
             //value += button.id;
             // value = Math.round(value);
+            // if (value.length >= 17 ) {
+            //     num = parseFloat(value)
+            //     value = num.toExponential();
+            // }
             display.textContent = value += button.id;
             //console.log(value);
         }
@@ -75,10 +83,10 @@ buttons.forEach((button) => {
             a = operate(sign, +a, +value);//here result is a cause a will be needed in next iteration
             //previous operator will act as sign
             sign = button.id;//then new operator will replace it 
-            display.textContent = a ;
+            display.textContent = value = '';
             displayValue.textContent = a + ' ' + sign;
             console.log(value)
-            value = '';
+            
         }
         else if (button.id == '=' && value == '') {
             return; //so something like '10 + =' will not create problem
@@ -86,7 +94,7 @@ buttons.forEach((button) => {
         else if (button.id == '=' && value >= 0 && sign != '') {
             displayValue.textContent += ' ' + value;
             let result = operate(sign, +a, +value);
-            display.textContent = value = result;
+            display.textContent = value = result.toExponential();
             console.log(value);
             sign = '';
         }
