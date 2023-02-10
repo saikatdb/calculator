@@ -1,0 +1,97 @@
+*{
+    font-family: 'Kalam', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    /* margin: auto; */
+    background-color: rgb(211, 211, 200);
+}
+.main {
+    box-sizing: border-box;
+    margin: auto;
+    width: 24em;
+    height: 32.5em;
+    border: solid;
+    padding: 1em;
+    background-color: rgba(28, 28, 29, 0.966);
+}
+button {
+   font-size: 30px; 
+}
+.content {
+    border: 2px solid rgb(22, 22, 22);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: 1em;
+    background-color: rgb(89, 89, 90);
+    color: rgb(230, 227, 227);
+}
+.display-value,
+.display {
+    box-sizing: border-box;
+    height: 1em;
+    font-size: 25px;
+    /* padding: 0 15px 10px; */
+    margin: 10px;
+    /* display: flex;
+    flex: 1; */
+}
+.display-value {
+    display: flex;
+    flex: 1 1 auto;
+    font-size: 20px;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: .5em 0 0;
+}
+.button {
+    transition-duration: 0.3s;
+}
+.number,
+.operator,
+.equal,
+.period {
+    width: 2.7em;
+    height: 2.3em;
+    background-color: rgb(194, 190, 190);
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(53, 53, 56);
+}
+button:hover {
+    background-color: rgb(145, 169, 194);
+    color: rgb(10, 10, 10);
+}
+.button:active {
+    transform: translateY(4px);
+  }
+.clear,
+.delete {
+    width: 5.6em;
+    height: 2.3em;
+    border-radius: 5px;
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(31, 31, 32);
+}
+.clear {
+    background-color: rgb(179, 119, 91);
+}
+.clear:hover {
+    background-color: rgb(151, 102, 79);
+}
+.delete {
+    background-color: rgb(153, 113, 189);
+}
+.delete:hover {
+    background-color: rgb(117, 87, 143);
+}
+.operator:hover {
+    background-color: rgb(120, 187, 153);
+}
+.equal:hover {
+    background-color: rgb(141, 146, 73);
+}
