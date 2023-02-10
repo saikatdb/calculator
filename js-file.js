@@ -23,42 +23,27 @@ const buttons = document.querySelectorAll('button');
 let value = '';
 let sign = '';
 let a = '';
-// let b = '';
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if (button.classList == 'clear') {
-            value = '';
-            sign = '';
-            displayValue.textContent = '';
+            displayValue.textContent = sign = value = '';
             display.textContent = 0;
         }
         else if (button.classList == 'delete') {
             if(value.length == 0 || value.length == 1 ){
-                //console.log(value.length)
                 value = '';
                 display.textContent = 0;
             }
             else {
                 display.textContent = value = value.toString().slice(0, -1);
-                //console.log(value.length)
             }
         }
-        // else if (value.length >= 17 ) {
-            //     value = value.toExponential();
-            // }
         else if (value.length >= 17 ) {
             num = parseFloat(value)
             value = num.toExponential();
         }
         else if (button.classList == 'number') {
-            //value += button.id;
-            // value = Math.round(value);
-            // if (value.length >= 17 ) {
-            //     num = parseFloat(value)
-            //     value = num.toExponential();
-            // }
             display.textContent = value += button.id;
-            //console.log(value);
         }
         else if (button.classList == 'period' && !value.toString().includes('.')) {
             display.textContent = value += button.id;
@@ -68,8 +53,6 @@ buttons.forEach((button) => {
             sign = button.id;
             displayValue.textContent = value + ' ' + sign;
             display.textContent = value = '';
-            //console.log(value);
-            //console.log(sign);
         }
         else if (button.id == '=' && sign == '÷' && value == 0 ||
         button.classList == 'operator' && sign == '÷' && value == 0) {
