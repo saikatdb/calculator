@@ -3,7 +3,6 @@
     font-family: 'Roboto', sans-serif;
 }
 body {
-    /* margin: auto; */
     background-color: rgb(211, 211, 200);
 }
 .main {
@@ -33,10 +32,7 @@ button {
     box-sizing: border-box;
     height: 1em;
     font-size: 25px;
-    /* padding: 0 15px 10px; */
     margin: 10px;
-    /* display: flex;
-    flex: 1; */
 }
 .display-value {
     display: flex;
