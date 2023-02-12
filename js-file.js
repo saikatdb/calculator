@@ -77,8 +77,10 @@ buttons.forEach((button) => {
         else if (button.id == '=' && value >= 0 && sign != '') {
             displayValue.textContent += ' ' + value;
             let result = operate(sign, +a, +value);
-            display.textContent = value = result.toExponential();
-            console.log(value);
+            if(result.length >= 17) {
+                display.textContent = value = result.toExponential();
+            }
+            display.textContent = value = result;
             sign = '';
         }
     })
